@@ -1,0 +1,23 @@
+{
+  "name": "WP Theme",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Andrew Vaccaro",
+  "devDependencies": {
+    "alpinejs": "^3.13.5",
+    "parcel": "^2.11.0",
+    "postcss": "^8.4.35",
+    "postcss-import": "^16.0.1",
+    "tailwindcss": "^3.4.1"
+  },
+  "scripts": {
+    "clean": "rm -r dist/",
+    "start": "parcel watch assets/index.js",
+    "build": "parcel build assets/index.js"
+  },
+  "dependencies": {
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@tailwindcss/typography": "^0.5.10",
+    "glightbox": "^3.2.0"
+  }
+}

@@ -1,0 +1,13 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+/** Pages **/
+@import 'pages/home';
+  
+/** Custom Components **/
+@import 'components/button';
+@import 'components/nav';
+@import 'components/video';
+
+@import "tailwindcss/utilities";
