@@ -9,5 +9,6 @@
 @import 'components/button';
 @import 'components/nav';
 @import 'components/video';
+@import 'components/carousel';
 
 @import "tailwindcss/utilities";
