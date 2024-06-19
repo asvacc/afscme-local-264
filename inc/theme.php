@@ -5,7 +5,6 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 add_action('wp_enqueue_scripts', 'enqueue_styles');
 add_action( 'init', 'register_menu' );
 // add_action('admin_enqueue_scripts', 'enqueue_styles');
-add_filter( 'body_class', 'custom_body_class' );
 add_theme_support( 'post-thumbnails' );
 
 

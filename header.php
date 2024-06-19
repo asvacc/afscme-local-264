@@ -28,7 +28,7 @@
 			'container' => 'nav',
 			'menu_class' => 'flex items-center justify-center space-x-2 sm:space-x-8',
 			'theme_location' => 'main-menu',
-			'walker' => new Vaccaro\Walkers\Main_Menu_Walker()
+			//'walker' => new Vaccaro\Walkers\Main_Menu_Walker()
 		]); ?> 
 	</header>
 	<main>
