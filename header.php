@@ -31,7 +31,7 @@
 			<nav>
 				<ul class="flex items-center justify-center">
 					<li><a class="inline-block px-4 py-8 transition-colors hover:bg-green-light" href="/">Home</a></li>
-					<li><a class="inline-block px-4 py-8 transition-colors hover:bg-green-light" href="/">News & Announcements</a></li>
+					<li><a class="inline-block px-4 py-8 transition-colors hover:bg-green-light" href="/news">News & Announcements</a></li>
 					<li class="relative" x-data="{open: false}" @mouseover.outside="open = false">
 						<a @mouseenter="open = true" class="inline-block px-4 py-8 transition-colors hover:bg-green-light"
 							href="/">Reports</a>
