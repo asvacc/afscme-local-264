@@ -12,30 +12,44 @@
 get_header()
     ?>
 
-<section class="py-20">
+<section class="py-12 bg-white">
     <div class="container">
-        <h1 class="text-5xl text-center">News & Announcements</h1>
-        <ul class="grid grid-cols-2 gap-8 mt-12">
-            <?php for ($i = 0; $i < 6; $i++): ?>
-                <li class="p-6 bg-white shadow-lg">
-                    <div class="prose prose-lg">
-                    <span>June 29th, 2024</span>
-                    <h2 class="mt-0 mb-2 text-4xl">Announcement Title</h2>
-                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, architecto tenetur! Molestiae,
-                        vero recusandae quaerat laborum architecto, ipsum autem laudantium quae rem aspernatur adipisci
-                        porro possimus voluptatibus minima blanditiis veniam.</p>
-                    <a href="/article" class="btn btn-green btn-sm">Read more</a>
-                    </div>
-                    <div class="flex items-center justify-start pt-6 mt-6 text-sm border-t-2 border-gray-200 gap-x-2">
-                    Categories:
-                        <ul class="flex items-center list-none gap-x-3">
-                            <li><a class="px-2 py-1 text-xs text-white no-underline uppercase bg-gray-600 rounded-md" href="#">Announcement</a></li>
-                            <li><a class="px-2 py-1 text-xs text-white no-underline uppercase bg-gray-600 rounded-md" href="#">Something else</a></li>
-                        </ul>
-                    </div>
-                </li>
-            <?php endfor; ?>
-        </ul>
+        <h1 class="pb-2 text-5xl text-left border-b-4 text-green border-green">News & Announcements</h1>
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="container grid grid-cols-8 gap-20">
+        <div class="col-span-2 space-y-12">
+            <div class="sticky top-8">
+                <h3 class="text-2xl text-green border-green">Categories</h3>
+                <ul class="mt-6 divide-y-2 divide-gray-200 border-y-2 border-y-gray-200">
+                    <?php for ($i = 0; $i < 7; $i++): ?>
+                        <li><a class="flex px-0 py-3 transition-all bg-transparent hover:bg-gray-200 flex-center hover:px-2"
+                                href="#">Category</a></li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
+        </div>
+        <div class="col-span-6">
+            <ul class="grid grid-cols-1 gap-8">
+                <?php for ($i = 0; $i < 6; $i++): ?>
+                    <li class="p-6 bg-white shadow-lg">
+                        <div class="prose prose-lg">
+                            <h2 class="mt-0 mb-0 text-4xl">Announcement Title</h2>
+                            <span class="text-base">June 29th, 2024</span>
+                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, architecto
+                                tenetur! Molestiae,
+                                vero recusandae quaerat laborum architecto, ipsum autem laudantium quae rem aspernatur
+                                adipisci
+                                porro possimus voluptatibus minima blanditiis veniam.</p>
+                            <a href="/article" class="btn btn-green btn-sm">Read more</a>
+                        </div>
+              
+                    </li>
+                <?php endfor; ?>
+            </ul>
+        </div>
     </div>
 </section>
 

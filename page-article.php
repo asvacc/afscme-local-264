@@ -11,6 +11,11 @@
  */
 get_header()
     ?>
+<section class="py-12 bg-white">
+    <div class="container">
+        <h1 class="pb-2 text-5xl text-left border-b-4 text-green border-green">News & Announcements</h1>
+    </div>
+</section>
 
 <section class="py-20">
     <div class="container grid grid-cols-8 gap-20">
