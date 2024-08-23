@@ -26,10 +26,10 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> :class="menu_toggled ? 'overflow-y-hidden h-screen' : ''" x-data="{menu_toggled: false}" @menu-toggled="menu_toggled = $event.detail">
 	<?php wp_body_open(); ?>
 	<div class="font-sans text-lg site">
-		<header class="text-white flex flex-col bg-transparent h-screen max-h-[40vh] relative overflow-hidden">
+		<header class="text-white flex flex-col bg-transparent h-screen max-h-[50vh] md:max-h-[40vh] relative overflow-hidden">
 			<div class="relative z-10 flex items-center justify-between px-4 py-2 lg:py-0 lg:container">
 				<a href="<?= get_home_url() ?>">
 					<img class="w-40" src="<?= get_attachment(get_theme_option('logo')) ?>" />
@@ -40,8 +40,8 @@
 			<div
 				class="container relative z-[1] flex flex-col items-center justify-center flex-grow text-center text-white">
 				<?php if (is_front_page()): ?>
-					<h1 class="-mt-12 text-6xl font-bold ">AFSCME Local 264</h1>
-					<p class="max-w-screen-sm text-2xl mt-7">Representing: City of Buffalo Blue Collar Employees · Buffalo
+					<h1 class="-mt-12 text-5xl font-bold lg:text-6xl ">AFSCME Local 264</h1>
+					<p class="max-w-screen-sm text-lg sm:text-xl lg:text-2xl mt-7">Representing: City of Buffalo Blue Collar Employees · Buffalo
 						Municipal Housing Authority Employees –
 						Blue Collar, White Collar and Managers · Board of Education – Food Service Workers, Cook Managers
 						and Service Center Employees

@@ -1243,10 +1243,6 @@ img, video {
   top: 2rem;
 }
 
-.left-0 {
-  left: 0;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -1369,19 +1365,14 @@ img, video {
   height: 2.5rem;
 }
 
-.size-6 {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.size-8 {
-  width: 2rem;
-  height: 2rem;
-}
-
 .size-4 {
   width: 1rem;
   height: 1rem;
+}
+
+.size-6 {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .\!h-auto {
@@ -1400,8 +1391,8 @@ img, video {
   height: 100vh;
 }
 
-.max-h-\[40vh\] {
-  max-height: 40vh;
+.max-h-\[50vh\] {
+  max-height: 50vh;
 }
 
 .w-20 {
@@ -1422,10 +1413,6 @@ img, video {
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/2 {
-  width: 50%;
 }
 
 .max-w-full {
@@ -1465,6 +1452,10 @@ img, video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.resize {
+  resize: both;
 }
 
 .list-none {
@@ -1590,6 +1581,14 @@ img, video {
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .rounded {
   border-radius: .25rem;
 }
@@ -1629,11 +1628,6 @@ img, video {
   --tw-border-opacity: 1;
   border-top-color: rgb(229 231 235 / var(--tw-border-opacity));
   border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.bg-\[\#ff0000\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-gray-800 {
@@ -1758,6 +1752,10 @@ img, video {
   padding-bottom: 1rem;
 }
 
+.pl-4 {
+  padding-left: 1rem;
+}
+
 .pt-20 {
   padding-top: 5rem;
 }
@@ -1768,10 +1766,6 @@ img, video {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pl-4 {
-  padding-left: 1rem;
 }
 
 .text-left {
@@ -1957,11 +1951,6 @@ img, video {
   }
 }
 
-.after\:content-left-caret:after {
-  --tw-content: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20stroke-width%3D%221.5%22%20stroke%3D%22white%22%20class%3D%22%22%3E%0A%20%20%3Cpath%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22m8.25%204.5%207.5%207.5-7.5%207.5%22%20%2F%3E%0A%3C%2Fsvg%3E");
-  content: var(--tw-content);
-}
-
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1977,6 +1966,19 @@ img, video {
   padding-right: .5rem;
 }
 
+@media (width >= 640px) {
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (width >= 768px) {
+  .md\:max-h-\[40vh\] {
+    max-height: 40vh;
+  }
+}
+
 @media (width >= 1024px) {
   .lg\:flex {
     display: flex;
@@ -1989,6 +1991,16 @@ img, video {
   .lg\:py-0 {
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 
