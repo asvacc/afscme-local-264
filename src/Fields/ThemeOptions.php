@@ -23,7 +23,7 @@ class ThemeOptions
          Container::make('theme_options', __('Design'))
             ->set_page_parent($basic_options_container) // reference to a top level container
             ->add_fields(array(
-                Field::make( 'image', 'background_image', __( 'Background Image' ) ),
+                Field::make( 'media_gallery', 'header_images', __( 'Header Slideshow Images' ) ),
                 Field::make( 'image', 'logo', __( 'Logo' ) ),
         ));
 

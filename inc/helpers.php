@@ -15,3 +15,10 @@ if(!function_exists('get_theme_option'))
         return carbon_get_theme_option($field);
     }
 }
+
+if (!function_exists('get_attachment')) {
+    function get_attachment($id, $size = 'full')
+    {
+        return wp_get_attachment_image_src($id, $size)[0];
+    }
+}

@@ -12,8 +12,14 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<style>
+		[x-cloak] {
+			display: none !important;
+		}
+	</style>
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,33 +27,31 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div class="font-sans text-lg site">
-	<header class="text-white bg-green">
-		<div class="container flex items-center justify-between">
-			<a href="<?= get_home_url() ?>">
-				<img class="w-40" src="<?= THEME_DIR_URL . '/assets/images/logo.png' ?>" />
-			</a>
-			<nav>
-				<ul class="flex items-center justify-center">
-					<li><a class="inline-block px-4 py-8 transition-colors hover:bg-green-light" href="/">Home</a></li>
-					<li><a class="inline-block px-4 py-8 transition-colors hover:bg-green-light" href="/news">News & Announcements</a></li>
-					<li class="relative" x-data="{open: false}" @mouseover.outside="open = false">
-						<a @mouseenter="open = true" class="inline-block px-4 py-8 transition-colors hover:bg-green-light"
-							href="/">Reports</a>
-						<ul x-show="open" class="absolute left-0 z-50 w-64 bg-green">
-							<li>
-								<a class="block px-4 py-4 transition-colors hover:bg-green-light" href="">Report 1</a>
-							</li>
-							<li>
-								<a class="block px-4 py-4 transition-colors hover:bg-green-light" href="">Report 2</a>
-							</li>
-						</ul>
-					</li>
-					<li><a class="inline-block px-4 py-8" href="/">Meeting Agenda</a></li>
-					<li><a class="inline-block px-4 py-8" href="/about">About</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<main>
+	<?php wp_body_open(); ?>
+	<div class="font-sans text-lg site">
+		<header class="text-white flex flex-col bg-transparent h-screen max-h-[40vh] relative overflow-hidden">
+			<div class="relative z-10 flex items-center justify-between px-4 py-2 lg:py-0 lg:container">
+				<a href="<?= get_home_url() ?>">
+					<img class="w-40" src="<?= get_attachment(get_theme_option('logo')) ?>" />
+				</a>
+				<?php include (THEME_DIR . '/template-parts/components/navigation.php') ?>
+			</div>
+
+			<div
+				class="container relative z-[1] flex flex-col items-center justify-center flex-grow text-center text-white">
+				<?php if (is_front_page()): ?>
+					<h1 class="-mt-12 text-6xl font-bold ">AFSCME Local 264</h1>
+					<p class="max-w-screen-sm text-2xl mt-7">Representing: City of Buffalo Blue Collar Employees · Buffalo
+						Municipal Housing Authority Employees –
+						Blue Collar, White Collar and Managers · Board of Education – Food Service Workers, Cook Managers
+						and Service Center Employees
+					</p>
+				<?php else: ?>
+					<h1 class="text-6xl font-bold -mt-14"><?= get_the_title(); ?></h1>
+				<?php endif; ?>
+			</div>
+
+			<?php include (THEME_DIR . '/template-parts/components/header-slider.php') ?>
+
+		</header>
+		<main>

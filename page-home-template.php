@@ -14,7 +14,7 @@ get_header()
 ?>
 
 
-<section class="pb-20">
+<section class="pb-20 mt-16">
     <div class="container grid grid-cols-3 gap-12">
         <div class="flex flex-col col-span-2 gap-y-20">
             <div x-data="swiper(
