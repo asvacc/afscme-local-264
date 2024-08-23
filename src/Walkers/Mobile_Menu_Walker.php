@@ -25,6 +25,7 @@ class Mobile_Menu_Walker extends \Walker_Nav_Menu
 		$atts['class'] = !empty($class_names) ? $class_names : '';
 		$atts['x-show'] = 'open';
 
+
 		$atts = apply_filters('nav_menu_submenu_attributes', $atts, $args, $depth);
 		$attributes = $this->build_atts($atts);
 
@@ -62,6 +63,10 @@ class Mobile_Menu_Walker extends \Walker_Nav_Menu
 		$classes[] = 'menu-item-' . $menu_item->ID;
 		$classes[] = 'relative transition-colors hover:bg-green-light bg-green-dark';
 
+		if($depth >= 1){
+			$classes[] = 'relative transition-colors bg-green-light pl-4';
+		}
+
 		$args = apply_filters('nav_menu_item_args', $args, $menu_item, $depth);
 
 		$class_names = implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $menu_item, $args, $depth));
@@ -73,6 +78,7 @@ class Mobile_Menu_Walker extends \Walker_Nav_Menu
 		$li_atts['class'] = !empty($class_names) ? $class_names : '';
 		if (isset($args->walker->has_children) && $args->walker->has_children) {
 			$li_atts['x-data'] = "{open: false}";
+			$li_atts[':class'] = "open ? 'bg-green-light' : ''";
 		}
 
 		$li_atts = apply_filters('nav_menu_item_attributes', $li_atts, $menu_item, $args, $depth);

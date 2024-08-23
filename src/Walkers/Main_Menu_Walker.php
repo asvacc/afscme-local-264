@@ -17,7 +17,11 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		$indent = str_repeat($t, $depth);
 
 		// Default class.
-		$classes = array('sub-menu', 'absolute left-0 z-50 w-64 bg-green');
+		$classes = array('sub-menu', 'absolute right-0 z-50 flex justify-between w-full bg-green');
+
+		if ($depth >= 1) {
+			$classes = array('sub-menu', 'absolute right-0 z-50 w-full bg-green');
+		}
 
 		$class_names = implode(' ', apply_filters('nav_menu_submenu_css_class', $classes, $args, $depth));
 
@@ -60,7 +64,12 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 
 		$classes = empty($menu_item->classes) ? array() : (array) $menu_item->classes;
 		$classes[] = 'menu-item-' . $menu_item->ID;
-		$classes[] = 'relative transition-colors hover:bg-green-light';
+		$classes[] = 'transition-colors hover:bg-green-light';
+
+		if($depth >= 1)
+		{
+			$classes[] = 'w-full relative';
+		}
 
 		$args = apply_filters('nav_menu_item_args', $args, $menu_item, $depth);
 
@@ -104,7 +113,7 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
 		if($depth > 0)
 		{
-			$atts['class'] = 'flex items-center justify-between px-4 py-4 ';
+			$atts['class'] = 'flex items-center justify-between px-4 py-4';
 		}
 		else
 		{
@@ -125,12 +134,8 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		$item_output .= '<a' . $attributes . '>';
 		$item_output .= $args->link_before . $title . $args->link_after;
 
-		if (isset($args->walker->has_children) && $args->walker->has_children) {
-			// $item_output .= '<button :class="open ? \'rotate-90\' : \'\'" class="block transition-transform transform lg:hidden" @click.			prevent="open = !open">
-			// 	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-			// 		<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-			// 		</svg>
-			// </button>';
+		if ($depth > 0 && (isset($args->walker->has_children) && $args->walker->has_children)) {
+			$item_output .= '<svg :class="open ? \'rotate-90\' : \'\'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-white transition-transform transform size-4"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>';
 		}
 
 		$item_output .= '</a>';

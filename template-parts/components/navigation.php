@@ -1,4 +1,4 @@
-<nav x-data="{menu_open: false}">
+<nav x-data="{menu_open: false}" class="relative">
     <button class="relative z-10 block lg:hidden" @click="menu_open = !menu_open">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="size-10" x-show="!menu_open">
@@ -28,7 +28,8 @@
 							x-transition:leave="transition ease-in duration-300"
 							x-transition:leave-start="translate-x-0"
 							x-transition:leave-end="translate-x-full" 
-							x-show="menu_open" class="%2$s">%3$s</ul>',
+							x-show="menu_open"
+                            class="%2$s">%3$s</ul>',
         'menu_class' => 'fixed lg:hidden top-0 pt-20 flex h-full w-[20rem] flex-col items-stretch right-0 justify-start transition-transform bg-green-dark ',
     ]); ?>
 
