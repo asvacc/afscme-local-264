@@ -1288,8 +1288,16 @@ img, video {
   margin-bottom: 0;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-0 {
+  margin-left: 0;
 }
 
 .mt-0 {
@@ -1330,14 +1338,6 @@ img, video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mr-0 {
-  margin-right: 0;
-}
-
-.ml-0 {
-  margin-left: 0;
 }
 
 .block {
@@ -1399,16 +1399,12 @@ img, video {
   height: 100vh;
 }
 
-.max-h-\[50vh\] {
-  max-height: 50vh;
-}
-
-.max-h-\[30vh\] {
-  max-height: 30vh;
-}
-
 .max-h-\[35vh\] {
   max-height: 35vh;
+}
+
+.max-h-\[50vh\] {
+  max-height: 50vh;
 }
 
 .w-20 {
@@ -1572,12 +1568,6 @@ img, video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .divide-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
@@ -1593,10 +1583,6 @@ img, video {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-}
-
-.self-end {
-  align-self: flex-end;
 }
 
 .overflow-hidden {
@@ -1652,6 +1638,11 @@ img, video {
   border-bottom-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
+.bg-gray-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -1679,11 +1670,6 @@ img, video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-gray-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -1884,10 +1870,6 @@ img, video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-inherit {
-  color: inherit;
-}
-
 .no-underline {
   text-decoration-line: none;
 }
@@ -1987,14 +1969,14 @@ img, video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-green-light:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 135 85 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-green:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 112 54 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-green-light:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 135 85 / var(--tw-bg-opacity));
 }
 
 .hover\:px-2:hover {
