@@ -29,7 +29,7 @@
 <body <?php body_class(); ?> :class="menu_toggled ? 'overflow-y-hidden h-screen' : ''" x-data="{menu_toggled: false}" @menu-toggled="menu_toggled = $event.detail">
 	<?php wp_body_open(); ?>
 	<div class="font-sans text-lg site">
-		<header class="text-white flex flex-col bg-transparent h-screen max-h-[50vh] md:max-h-[40vh] relative overflow-hidden">
+		<header class="text-white flex flex-col bg-transparent h-screen <?= is_front_page() ? 'md:max-h-[40vh] max-h-[50vh]' : 'md:max-h-[30vh] max-h-[35vh]' ?> relative overflow-hidden"> 
 			<div class="relative z-10 flex items-center justify-between px-4 py-2 lg:py-0 lg:container">
 				<a href="<?= get_home_url() ?>">
 					<img class="w-40" src="<?= get_attachment(get_theme_option('logo')) ?>" />
