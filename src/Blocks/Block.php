@@ -50,7 +50,7 @@ abstract class Block{
                 $slug = $this->safeString($this->title);
                 $classes .= strtolower($slug);
                 if(file_exists( get_theme_file_path("/template-parts/blocks/{$slug}.php")))
-                    include(get_theme_file_path("/template-parts/blocks/block.php"));
+                    include(get_theme_file_path("/template-parts/blocks/Block.php"));
             });
     }
 
