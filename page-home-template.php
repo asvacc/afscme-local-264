@@ -10,13 +10,18 @@
  * different template.
  *
  */
-get_header()
+get_header();
+
+while (have_posts()):
+    the_post();
+    the_content();
+endwhile;
+
 ?>
 
-
 <section class="pb-20 mt-16">
-    <div class="container grid grid-cols-3 gap-12">
-        <div class="flex flex-col col-span-2 gap-y-20">
+    <div class="container">
+        <div class="flex flex-col gap-y-20">
             <div x-data="swiper(
         {
             loop: true,
@@ -38,18 +43,15 @@ get_header()
                         <!-- Slides -->
                         <div href="" class="bg-green-dark relative px-12 py-40 swiper-slide !h-auto">
                             <div
-                                class="container relative z-10 flex flex-col items-center justify-center h-full prose prose-lg text-center text-white">
-                                <h2 class="text-4xl text-white uppercase">News article title</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusamus
-                                    officiis,
-                                    natus,
-                                    magnam dolor quasi ex distinctio consequuntur corrupti, aperiam voluptas sunt.
-                                    Porro,
-                                    cum
-                                    asperiores. Cupiditate tempora esse atque fugit.</p>
-                                <a href="/article"
-                                    class="inline-block px-4 py-2 no-underline bg-white rounded-md text-green">Read
-                                    more</a>
+                                class="container relative z-10 flex flex-col items-center justify-center h-full prose prose-lg text-center text-white prose-headings:text-white prose-a:text-white prose-p:text-white">
+                                    <h2 class="text-4xl uppercase">REMINDER!</h2>
+                                    <h3>Local 264</h3>
+                                    <p>General Membership Meeting</p>
+                                    <p>Tuesday, September 17, 2024</p>
+                                    <p>5:30 pm</p>
+                                    <p>American Legion Post #721</p>
+                                    <p>136 Cazenovia St.</p>
+                                    <p>Buffalo, NY 14210</p>
                             </div>
                             <img src="https://picsum.photos/800"
                                 class="absolute inset-0 z-0 object-cover w-full h-full opacity-20" />
@@ -88,40 +90,6 @@ get_header()
                 </ul>
                 <div class="flex justify-center mt-8">
                     <a class="btn btn-green" href="#">View All News & Announcements</a>
-                </div>
-            </div>
-        </div>
-        <div class="flex flex-col py-12 gap-y-20">
-            <div>
-                <h1 class="text-4xl text-green">AFSCME Local 264</h1>
-                <div class="mt-12 prose prose-lg">
-                    Representing:
-                    <ul>
-                        <li>City of Buffalo Blue Collar Employees</li>
-                        <li>Buffalo Municipal Housing Authority Employees - Blue Collar, White Collar and Managers</li>
-                        <li>Board of Education – Food Service Workers, Cook Managers and Service Center Employees</li>
-                </div>
-                <img class="block h-auto mx-auto mt-12 w-60" src="<?= THEME_DIR_URL . '/assets/images/bison.png' ?>" />
-            </div>
-            <div>
-                <div class="flex items-center justify-between p-4 text-white bg-green">
-                    <h2 class="text-xl font-semibold text-white uppercase">Upcoming Events</h2>
-                </div>
-                <div>
-                    <ul class="flex flex-col mt-8 space-y-8">
-                        <?php for($i=0;$i<3;$i++): ?>
-                        <li class="flex flex-row items-center justify-start space-x-4">
-                            <div class="flex flex-col items-center justify-center flex-shrink-0 w-20 p-3 text-white rounded bg-green">
-                                <span class="text-base">July</span>
-                                <span class="-mt-1 text-2xl">30</span>
-                            </div>
-                            <div class="flex flex-col">
-                                <span>Meeting </span>
-                                <span class="text-sm text-gray-500">8 PM</span>
-                            </div>
-                        </li>
-                        <?php endfor; ?>
-                    </ul>
                 </div>
             </div>
         </div>

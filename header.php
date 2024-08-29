@@ -26,22 +26,29 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> :class="menu_toggled ? 'overflow-y-hidden h-screen' : ''" x-data="{menu_toggled: false}" @menu-toggled="menu_toggled = $event.detail">
+<body <?php body_class(); ?> :class="menu_toggled ? 'overflow-y-hidden h-screen' : ''" x-data="{menu_toggled: false}"
+	@menu-toggled="menu_toggled = $event.detail">
 	<?php wp_body_open(); ?>
 	<div class="font-sans text-lg site">
-		<header class="text-white flex flex-col bg-transparent h-screen <?= is_front_page() ? 'md:max-h-[40vh] max-h-[50vh]' : 'md:max-h-[30vh] max-h-[35vh]' ?> relative overflow-hidden"> 
+
+		<?php include(THEME_DIR . '/template-parts/components/site-alert.php') ?>
+
+
+		<header
+			class="text-white flex flex-col bg-transparent h-screen <?= is_front_page() ? 'md:max-h-[40vh] max-h-[50vh]' : 'md:max-h-[30vh] max-h-[35vh]' ?> relative overflow-hidden">
 			<div class="relative z-10 flex items-center justify-between px-4 py-2 lg:py-0 lg:container">
 				<a href="<?= get_home_url() ?>">
 					<img class="w-40" src="<?= get_attachment(get_theme_option('logo')) ?>" />
 				</a>
-				<?php include (THEME_DIR . '/template-parts/components/navigation.php') ?>
+				<?php include(THEME_DIR . '/template-parts/components/navigation.php') ?>
 			</div>
 
 			<div
 				class="container relative z-[1] flex flex-col items-center justify-center flex-grow text-center text-white">
 				<?php if (is_front_page()): ?>
 					<h1 class="-mt-12 text-5xl font-bold lg:text-6xl ">AFSCME Local 264</h1>
-					<p class="max-w-screen-sm text-lg sm:text-xl lg:text-2xl mt-7">Representing: City of Buffalo Blue Collar Employees · Buffalo
+					<p class="max-w-screen-sm text-lg sm:text-xl lg:text-2xl mt-7">Representing: City of Buffalo Blue Collar
+						Employees · Buffalo
 						Municipal Housing Authority Employees –
 						Blue Collar, White Collar and Managers · Board of Education – Food Service Workers, Cook Managers
 						and Service Center Employees
@@ -51,7 +58,7 @@
 				<?php endif; ?>
 			</div>
 
-			<?php include (THEME_DIR . '/template-parts/components/header-slider.php') ?>
+			<?php include(THEME_DIR . '/template-parts/components/header-slider.php') ?>
 
 		</header>
 		<main>
