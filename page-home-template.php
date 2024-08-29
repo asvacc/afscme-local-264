@@ -12,14 +12,14 @@
  */
 get_header();
 
-while (have_posts()):
-    the_post();
+while (have_posts()) : the_post();
     the_content();
 endwhile;
 
 ?>
 
 <section class="pb-20 mt-16">
+    <?php /*
     <div class="container">
         <div class="flex flex-col gap-y-20">
             <div x-data="swiper(
@@ -94,6 +94,7 @@ endwhile;
             </div>
         </div>
     </div>
+    */ ?>
 </section>
 
 <?php /* 
