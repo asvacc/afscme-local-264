@@ -6,7 +6,7 @@ get_header();
 <section class="py-20">
     <div class="container grid gap-12 lg:gap-20 md:grid-cols-8">
         <?php include(THEME_DIR . '/template-parts/components/news-sidebar.php'); ?>
-        <div class="order-1 col-span-6 md:order-2">
+        <div class="order-1 md:col-span-6 md:order-2">
             <article class="max-w-full prose prose-xl">
                 <h2 class="mb-0 text-6xl text-green"><?= get_the_title(); ?></h2>
                 <small class="text-lg"><?= get_the_date('F j, Y'); ?></small>
