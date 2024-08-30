@@ -1,0 +1,21 @@
+.pagination{
+    @apply px-4 mt-12;
+    .nav-links{
+        @apply flex items-center justify-center space-x-8;
+    }
+
+    .page-numbers:not(.prev):not(.next){
+        @apply flex flex-col items-center justify-center text-center rounded-full bg-gray-50 size-12;
+        &:not(span){
+            @apply hover:bg-green hover:text-white;
+        }
+        &.current {
+            @apply text-white bg-green;
+        }
+    }
+
+    .next,.prev{
+        @apply text-green-dark hover:underline;
+    }
+
+}

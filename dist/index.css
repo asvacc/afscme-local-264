@@ -1207,6 +1207,55 @@ img, video {
   }
 }
 
+.pagination {
+  margin-top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  & .nav-links {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  & .nav-links > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  & .page-numbers:not(.prev):not(.next) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+    text-align: center;
+    border-radius: 9999px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+  }
+
+  & .page-numbers:not(.prev):not(.next) {
+    &:not(span):hover, &.current {
+      --tw-bg-opacity: 1;
+      background-color: rgb(0 112 54 / var(--tw-bg-opacity));
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity));
+    }
+  }
+
+  & .next, & .prev {
+    --tw-text-opacity: 1;
+    color: rgb(45 79 56 / var(--tw-text-opacity));
+  }
+
+  & .next:hover, & .prev:hover {
+    text-decoration-line: underline;
+  }
+}
+
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1515,6 +1564,12 @@ img, video {
   row-gap: 5rem;
 }
 
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
@@ -1715,10 +1770,6 @@ img, video {
   padding-bottom: .5rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
 .pl-4 {
   padding-left: 1rem;
 }
@@ -1847,12 +1898,6 @@ img, video {
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
-.transition-opacity {
-  transition-property: opacity;
-  transition-duration: .15s;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
-
 .transition-transform {
   transition-property: transform;
   transition-duration: .15s;
@@ -1942,12 +1987,8 @@ img, video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:opacity-50:hover {
-  opacity: .5;
-}
-
-.hover\:opacity-90:hover {
-  opacity: .9;
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 @media (width >= 640px) {
@@ -1963,10 +2004,6 @@ img, video {
 }
 
 @media (width >= 768px) {
-  .md\:mt-12 {
-    margin-top: 3rem;
-  }
-
   .md\:size-6 {
     width: 1.5rem;
     height: 1.5rem;

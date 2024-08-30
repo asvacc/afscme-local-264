@@ -3,15 +3,22 @@
 add_action('init', 'remove_head_junk');
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
 add_action('wp_enqueue_scripts', 'enqueue_styles');
-add_action( 'init', 'register_menu' );
+add_action('init', 'register_menu');
+add_action('pre_get_posts', 'add_cpt_to_archive');
+
+add_filter('excerpt_more', 'replace_excerpt_more');
+
 // add_action('admin_enqueue_scripts', 'enqueue_styles');
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
+
+
+
 
 
 if (!function_exists('enqueue_scripts')) {
     function enqueue_scripts()
     {
-        wp_register_script('main',  THEME_DIR_URL . '/dist/index.js', [], '1.0', [
+        wp_register_script('main', THEME_DIR_URL . '/dist/index.js', [], '1.0', [
             'strategy' => 'defer'
         ]);
         wp_enqueue_script('main');
@@ -47,8 +54,26 @@ if (!function_exists('remove_head_junk')) {
     }
 }
 
-if(!function_exists('register_menu')){
-    function register_menu() {
-        register_nav_menu('main-menu',__( 'Main Menu' ));
+if (!function_exists('register_menu')) {
+    function register_menu()
+    {
+        register_nav_menu('main-menu', __('Main Menu'));
+    }
+}
+
+if (!function_exists('add_cpt_to_archive')) {
+    function add_cpt_to_archive($query)
+    {
+        if ($query->is_main_query() && !is_admin() && (is_category() || is_tag() || is_archive() || is_home() && empty($query->query_vars['suppress_filters']))) {
+            $query->set('post_type', array('news'));
+        }
+    }
+}
+
+if(!function_exists('replace_excerpt_more'))
+{
+    function replace_excerpt_more($more)
+    {
+        return '...';
     }
 }
