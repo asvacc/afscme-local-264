@@ -29,7 +29,7 @@
 <body <?php body_class(); ?> :class="menu_toggled ? 'overflow-y-hidden h-screen' : ''" x-data="{menu_toggled: false}"
 	@menu-toggled="menu_toggled = $event.detail">
 	<?php wp_body_open(); ?>
-	<div class="font-sans text-lg site">
+	<div class="flex flex-col min-h-screen font-sans text-lg site">
 
 		<?php include(THEME_DIR . '/template-parts/components/site-alert.php') ?>
 
@@ -48,4 +48,4 @@
 			<?php include(THEME_DIR . '/template-parts/components/header-slider.php') ?>
 
 		</header>
-		<main>
+		<main class="flex-grow">

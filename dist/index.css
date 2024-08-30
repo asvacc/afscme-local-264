@@ -1272,10 +1272,6 @@ img, video {
   position: relative;
 }
 
-.sticky {
-  position: sticky;
-}
-
 .inset-0 {
   inset: 0;
 }
@@ -1286,10 +1282,6 @@ img, video {
 
 .top-0 {
   top: 0;
-}
-
-.top-8 {
-  top: 2rem;
 }
 
 .z-0 {
@@ -1306,6 +1298,22 @@ img, video {
 
 .z-\[1\] {
   z-index: 1;
+}
+
+.z-20 {
+  z-index: 20;
+}
+
+.z-30 {
+  z-index: 30;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-1 {
+  order: 1;
 }
 
 .col-span-2 {
@@ -1445,6 +1453,10 @@ img, video {
   min-height: 25rem;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-40 {
   width: 10rem;
 }
@@ -1546,6 +1558,10 @@ img, video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
 }
 
 .gap-x-12 {
@@ -1719,11 +1735,6 @@ img, video {
 .py-1 {
   padding-top: .25rem;
   padding-bottom: .25rem;
-}
-
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .py-16 {
@@ -2004,6 +2015,22 @@ img, video {
 }
 
 @media (width >= 768px) {
+  .md\:order-1 {
+    order: 1;
+  }
+
+  .md\:order-2 {
+    order: 2;
+  }
+
+  .md\:col-span-6 {
+    grid-column: span 6 / span 6;
+  }
+
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .md\:size-6 {
     width: 1.5rem;
     height: 1.5rem;
@@ -2019,6 +2046,14 @@ img, video {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .md\:gap-20 {
+    gap: 5rem;
   }
 
   .md\:pb-4 {
@@ -2056,6 +2091,10 @@ img, video {
 
   .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:gap-20 {
+    gap: 5rem;
   }
 
   .lg\:py-0 {

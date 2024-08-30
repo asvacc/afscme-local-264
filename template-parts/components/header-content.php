@@ -21,6 +21,8 @@
             </svg>
             <span>Back to all news & announcements</span>
         </a>
+    <?php elseif(is_404()): ?>
+        <h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl -mt-14">Page Not Found</h1>
     <?php else: ?>
         <h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl -mt-14"><?= get_the_title(); ?></h1>
     <?php endif; ?>

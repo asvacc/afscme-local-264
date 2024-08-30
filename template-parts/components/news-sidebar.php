@@ -1,4 +1,4 @@
-<div class="col-span-2 space-y-12">
+<div class="order-2 space-y-12 md:col-span-2 md:order-1">
     <div>
         <h3 class="text-2xl text-green border-green">Categories</h3>
         <ul class="mt-6 divide-y-2 divide-gray-200 border-y-2 border-y-gray-200">
