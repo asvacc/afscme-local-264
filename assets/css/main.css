@@ -10,5 +10,6 @@
 @import 'components/nav';
 @import 'components/video';
 @import 'components/carousel';
+@import 'components/hero';
 
 @import "tailwindcss/utilities";

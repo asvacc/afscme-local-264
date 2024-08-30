@@ -6,6 +6,8 @@ add_action('after_setup_theme', 'boot_carbon_fields');
 add_action('after_setup_theme', 'register_post_types');
 add_action('after_setup_theme', 'register_blocks');
 add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
+add_filter('allowed_block_types_all', 'allowed_blocks', 10, 2);
+
 
 if (!function_exists('boot_carbon_fields')) {
     function boot_carbon_fields()
@@ -59,4 +61,26 @@ if (!function_exists('register_post_types')) {
             }
         }
     }
+}
+
+if(!function_exists('allowed_blocks'))
+{
+function allowed_blocks( $allowed_block_types, $block_editor_context ) {
+	$allowed_block_types = array(
+		'core/paragraph',
+	);
+
+    $finder = new Finder();
+    $finder->files()->name('*.php')->in(THEME_DIR . '/src/Blocks');
+
+    foreach ($finder as $file) {
+        $class_name = rtrim("Vaccaro\Blocks", '\\') . '\\' . $file->getFilenameWithoutExtension();
+        if (class_exists($class_name) && $class_name != "Vaccaro\Blocks\Block") {
+            $instance = new $class_name();
+            $allowed_block_types[] = 'carbon-fields/' . strtolower($instance->title);
+        }
+    }
+
+	return $allowed_block_types;
+}
 }

@@ -11,8 +11,8 @@
 
 ?>
 </main>
-<footer class="py-32 text-white bg-gray-800">
-    <div class="container grid grid-cols-4 gap-8">
+<footer class="py-32 text-white bg-green-dark">
+    <div class="container grid gap-8 md:grid-cols-4">
         <div>
             <h6 class="mb-8 text-xl font-bold">AFSCME Local 264</h6>
             <p>

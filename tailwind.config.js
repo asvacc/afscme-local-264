@@ -4,7 +4,8 @@ module.exports = {
     '*.php',
     './inc/*.php',
     './src/**/*.php',
-    './template-parts/**/*.php'
+    './template-parts/**/*.php',
+    './template-parts/blocks/*.php'
   ],
   theme: {
     container: {

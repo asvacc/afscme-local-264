@@ -35,7 +35,7 @@
 
 
 		<header
-			class="text-white flex flex-col bg-transparent h-screen <?= is_front_page() ? 'md:max-h-[40vh] max-h-[50vh]' : 'md:max-h-[30vh] max-h-[35vh]' ?> relative overflow-hidden">
+			class="text-white flex flex-col bg-transparent hero h-screen <?= is_front_page() ? 'md:max-h-[40vh] max-h-[50vh] min-h-[25rem]' : 'max-h-[30vh] min-h-[18rem]' ?> relative overflow-hidden">
 			<div class="relative z-10 flex items-center justify-between px-4 py-2 lg:py-0 lg:container">
 				<a href="<?= get_home_url() ?>">
 					<img class="w-40" src="<?= get_attachment(get_theme_option('logo')) ?>" />
@@ -46,7 +46,7 @@
 			<div
 				class="container relative z-[1] flex flex-col items-center justify-center flex-grow text-center text-white">
 				<?php if (is_front_page()): ?>
-					<h1 class="-mt-12 text-5xl font-bold lg:text-6xl ">AFSCME Local 264</h1>
+					<h1 class="-mt-12 text-4xl font-bold sm:text-5xl lg:text-6xl ">AFSCME Local 264</h1>
 					<p class="max-w-screen-sm text-lg sm:text-xl lg:text-2xl mt-7">Representing: City of Buffalo Blue Collar
 						Employees · Buffalo
 						Municipal Housing Authority Employees –
@@ -54,7 +54,7 @@
 						and Service Center Employees
 					</p>
 				<?php else: ?>
-					<h1 class="text-6xl font-bold -mt-14"><?= get_the_title(); ?></h1>
+					<h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl -mt-14"><?= get_the_title(); ?></h1>
 				<?php endif; ?>
 			</div>
 

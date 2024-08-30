@@ -52,6 +52,9 @@ abstract class Block{
                 if(file_exists( get_theme_file_path("/template-parts/blocks/{$slug}.php")))
                     include(get_theme_file_path("/template-parts/blocks/Block.php"));
             });
+
+
+
     }
 
     private function getFieldTitleFromClass($calledClass){
