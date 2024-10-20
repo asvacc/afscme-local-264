@@ -11,30 +11,25 @@
 
 ?>
 </main>
-<footer class="py-32 text-white bg-green-dark">
-    <div class="container grid gap-8 md:grid-cols-4">
+<footer class="pt-32 pb-20 text-white bg-green-dark">
+    <div class="container flex flex-col items-center space-y-16 text-center">
         <div>
-            <h6 class="mb-8 text-xl font-bold">AFSCME Local 264</h6>
+            <h6 class="mb-6 text-2xl font-bold">AFSCME Local 264</h6>
             <p>
                 2019 Seneca St<br />
                 Buffalo, NY 14210
             </p>
         </div>
-        <div class="col-span-2">
-            <h6 class="w-full mb-8 text-xl font-bold">Links</h6>
-            <ul class="columns-2">
-                <li><a href="/">Link</a></li>
-                <li><a href="/">Link</a></li>
-                <li><a href="/">Link</a></li>
-                <li><a href="/">Link</a></li>
-                <li><a href="/">Link</a></li>
-            </ul>
-        </div>
         <div>
-            <h6 class="mb-8 text-xl font-bold">Contact</h6>
-            <ul>
-                <li>Phone: <a href="/">716-123-1234</a></li>
-                <li>Email: <a href="/">test@test.com</a></li>
+            <h6 class="mb-6 text-2xl font-bold">Contacts</h6>
+            <ul class="space-y-7">
+            <?php foreach(get_theme_option("contacts") as $contact): ?>
+                <li>
+                    <p class="font-bold"><?= $contact['title']; ?></p>
+                    <p><?= $contact['name']; ?></p>
+                    <a class="hover:underline" href="mailto:<?= $contact['email']; ?>"><?= $contact['email']; ?></a>
+                </li>
+            <?php endforeach; ?>
             </ul>
         </div>
     </div>
