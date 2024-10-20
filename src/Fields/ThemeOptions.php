@@ -37,10 +37,12 @@ class ThemeOptions
         Container::make('theme_options', __('Contact Information'))
             ->set_page_parent($basic_options_container) // reference to a top level container
             ->add_fields(array(
-                Field::make('text', 'email', 'Email'),
-                Field::make('text', 'phone', 'Phone'),
-                Field::make('text', 'fax', 'Fax'),
-                Field::make('textarea', 'address', 'Address'),
+                Field::make( 'complex', 'contacts', __( 'Contacts' ) )
+                ->add_fields( array(
+                    Field::make( 'text', 'name', __( 'Name' ) ),
+                    Field::make( 'text', 'title', __( 'Title' ) ),
+                    Field::make( 'text', 'email', __( 'Email' ) )
+                ) )
         ));
     }
 }
