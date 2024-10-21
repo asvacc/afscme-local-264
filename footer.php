@@ -12,7 +12,7 @@
 ?>
 </main>
 <footer class="pt-32 pb-20 text-white bg-green-dark">
-    <div class="container flex flex-col items-center space-y-16 text-center">
+    <div class="container grid items-start space-y-12 md:grid-cols-3 md:space-y-0">
         <div>
             <h6 class="mb-6 text-2xl font-bold">AFSCME Local 264</h6>
             <p>
@@ -20,11 +20,11 @@
                 Buffalo, NY 14210
             </p>
         </div>
-        <div>
+        <div class="col-span-2">
             <h6 class="mb-6 text-2xl font-bold">Contacts</h6>
-            <ul class="space-y-7">
+            <ul class="grid items-start sm:grid-cols-2">
             <?php foreach(get_theme_option("contacts") as $contact): ?>
-                <li>
+                <li class="py-4">
                     <p class="font-bold"><?= $contact['title']; ?></p>
                     <p><?= $contact['name']; ?></p>
                     <a class="hover:underline" href="mailto:<?= $contact['email']; ?>"><?= $contact['email']; ?></a>
