@@ -122,6 +122,10 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 
 		if (isset($args->walker->has_children) && $args->walker->has_children) {
 			$atts['@mouseenter'] = 'open = true';
+			if($menu_item->url == '#')
+			{
+				$atts['@click.prevent'] = 'return';
+			}
 		}
 
 		$atts = apply_filters('nav_menu_link_attributes', $atts, $menu_item, $args, $depth);
