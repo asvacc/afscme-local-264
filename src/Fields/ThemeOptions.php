@@ -27,15 +27,11 @@ class ThemeOptions
                 Field::make( 'image', 'logo', __( 'Logo' ) ),
         ));
 
-        // Add second options page under 'Basic Options'
-        Container::make('theme_options', __('Social Links'))
-            ->set_page_parent($basic_options_container) // reference to a top level container
-            ->add_fields(array(
-                Field::make('text', 'facebook', __('Facebook Link'))
-        ));
 
         Container::make('theme_options', __('Contact Information'))
             ->set_page_parent($basic_options_container) // reference to a top level container
+            ->add_fields(array(
+                Field::make('textarea', 'address', __('Address'))))
             ->add_fields(array(
                 Field::make( 'complex', 'contacts', __( 'Contacts' ) )
                 ->add_fields( array(

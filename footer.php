@@ -16,8 +16,7 @@
         <div>
             <h6 class="mb-6 text-2xl font-bold">AFSCME Local 264</h6>
             <p>
-                2019 Seneca St<br />
-                Buffalo, NY 14210
+                <?= get_theme_option("address") ?>
             </p>
         </div>
         <div class="col-span-2">
