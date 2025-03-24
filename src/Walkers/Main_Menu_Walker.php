@@ -28,6 +28,7 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		$atts = array();
 		$atts['class'] = !empty($class_names) ? $class_names : '';
 		$atts['x-show'] = 'open';
+		$atts['style'] = 'display:none;';
 
 		$atts = apply_filters('nav_menu_submenu_attributes', $atts, $args, $depth);
 		$attributes = $this->build_atts($atts);
