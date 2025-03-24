@@ -125,7 +125,7 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 			$atts['@mouseenter'] = 'open = true';
 			if($menu_item->url == '#')
 			{
-				$atts['@click.prevent'] = 'javascript:void(0)';
+				$atts['@click.prevent'] = '"javascript:void(0)"';
 			}
 		}
 
