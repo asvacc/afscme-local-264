@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c4c7b6fa468295fc42988836c6075da",
+    "content-hash": "107d5c4e412009ea7ae60695d2a60136",
     "packages": [
         {
             "name": "htmlburger/carbon-fields",
-            "version": "v3.6.3",
+            "version": "v3.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/carbon-fields.git",
-                "reference": "d913a5148cb9dc61ed239719c747f4ebb513003f"
+                "reference": "f82e80e3e3469d6e86cc17a8950b918ad448a059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/d913a5148cb9dc61ed239719c747f4ebb513003f",
-                "reference": "d913a5148cb9dc61ed239719c747f4ebb513003f",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/f82e80e3e3469d6e86cc17a8950b918ad448a059",
+                "reference": "f82e80e3e3469d6e86cc17a8950b918ad448a059",
                 "shasum": ""
             },
             "require": {
@@ -144,53 +144,7 @@
                 "issues": "https://github.com/htmlburger/carbon-fields/issues",
                 "source": "https://github.com/htmlburger/carbon-fields"
             },
-            "time": "2023-11-28T15:52:46+00:00"
-        },
-        {
-            "name": "iamntz/carbon-fields-urlpicker",
-            "version": "3.0.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iamntz/carbon-fields-urlpicker.git",
-                "reference": "014b4b43bc677b7d8d135b5ede94d57b436f8e89"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/iamntz/carbon-fields-urlpicker/releases/download/v3.0.10/carbon-fields-urlpicker.zip",
-                "reference": "0d5014d078dc797af33829c9ad1aee2ae4074fd4",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "field.php"
-                ],
-                "psr-4": {
-                    "Carbon_Field_UrlPicker\\": "core/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Ionuț Staicu",
-                    "email": "github@iamntz.com"
-                }
-            ],
-            "description": "Carbon Fields extension that adds a URL picker field type.",
-            "homepage": "https://github.com/iamntz/carbon-fields-urlpicker",
-            "keywords": [
-                "carbon-field",
-                "carbon-fields-urlpicker",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/iamntz/carbon-fields-urlpicker/issues",
-                "source": "https://github.com/iamntz/carbon-fields-urlpicker/tree/v3.0.10"
-            },
-            "time": "2023-03-10T07:33:50+00:00"
+            "time": "2025-06-11T11:23:23+00:00"
         },
         {
             "name": "illuminate/collections",
@@ -1833,12 +1787,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
