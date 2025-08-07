@@ -1,4 +1,4 @@
-<nav x-data="{menu_open: false}" @resize.window.debounce="if(window.innerWidth > 1023) menu_open = false" x-init="$watch('menu_open', value => $dispatch('menu-toggled', value))" class="relative">
+<nav x-data="{menu_open: false}" @resize.window.debounce="if (window.innerWidth > 1023) { menu_open = false }" x-init="$watch('menu_open', value => $dispatch('menu-toggled', value))" class="relative">
     <button class="relative z-30 block lg:hidden"  @click="menu_open = !menu_open">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="size-10" x-show="!menu_open">
