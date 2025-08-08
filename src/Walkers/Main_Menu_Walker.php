@@ -17,10 +17,10 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		$indent = str_repeat($t, $depth);
 
 		// Default class.
-		$classes = array('sub-menu', 'absolute right-0 z-50 flex justify-between w-full bg-green');
+		$classes = array('sub-menu', 'absolute right-0 z-50 flex justify-between bg-green w-[150%]');
 
 		if ($depth >= 1) {
-			$classes = array('sub-menu', 'absolute right-0 z-50 w-full bg-green');
+			$classes = array('sub-menu', 'absolute right-0 z-50 w-full bg-green w-[150%]');
 		}
 
 		$class_names = implode(' ', apply_filters('nav_menu_submenu_css_class', $classes, $args, $depth));
@@ -83,7 +83,7 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		$li_atts['class'] = !empty($class_names) ? $class_names : '';
 		if (isset($args->walker->has_children) && $args->walker->has_children) {
 			$li_atts['x-data'] = "{open: false}";
-			$li_atts['@mouseover.outside'] = 'open = false';
+			$li_atts['x-on:mouseover.outside'] = 'open = false';
 		}
 
 		$li_atts = apply_filters('nav_menu_item_attributes', $li_atts, $menu_item, $args, $depth);
@@ -122,10 +122,10 @@ class Main_Menu_Walker extends \Walker_Nav_Menu
 		}
 
 		if (isset($args->walker->has_children) && $args->walker->has_children) {
-			$atts['@mouseenter'] = 'open = true';
+			$atts['x-on:mouseenter'] = 'open = true';
 			if($menu_item->url == '#')
 			{
-				$atts['@click.prevent'] = '"javascript:void(0)"';
+				$atts['x-on:click.prevent'] = '"javascript:void(0)"';
 			}
 		}
 

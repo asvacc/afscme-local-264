@@ -1465,6 +1465,10 @@ img, video {
   width: 100%;
 }
 
+.w-\[150\%\] {
+  width: 150%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }

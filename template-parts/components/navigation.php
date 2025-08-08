@@ -1,5 +1,5 @@
-<nav x-data="{menu_open: false}" @resize.window.debounce="if (window.innerWidth > 1023) { menu_open = false }" x-init="$watch('menu_open', value => $dispatch('menu-toggled', value))" class="relative">
-    <button class="relative z-30 block lg:hidden"  @click="menu_open = !menu_open">
+<nav x-data="{menu_open: false}" x-on:resize.window.debounce='if (window.innerWidth > 1023) { menu_open = false }' x-init="$watch('menu_open', value => $dispatch('menu-toggled', value))" class="relative">
+    <button class="relative z-30 block lg:hidden"  x-on:click="menu_open = !menu_open">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="size-10" x-show="!menu_open">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
