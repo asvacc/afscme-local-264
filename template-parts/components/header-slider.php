@@ -19,8 +19,8 @@ shuffle($slides);
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper" style="transition-timing-function: linear;">
             <!-- Slides -->
-            <?php foreach ($slides as $slide): ?>
-                <img src="<?= get_attachment($slide); ?>"
+            <?php foreach ($slides as $key => $slide): ?>
+                <img src="<?= get_attachment($slide); ?>" <?= $key >= 2 ? 'loading="lazy"' : "" ?>
                     class="absolute inset-0 z-0 object-cover w-full h-full pointer-events-none none swiper-slide opacity-20" />
             <?php endforeach; ?>
         </div>
