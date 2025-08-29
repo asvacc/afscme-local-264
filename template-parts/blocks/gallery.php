@@ -7,7 +7,7 @@
             <?php foreach ($images as $image): ?>
                 <div class="">
                     <a class="relative block overflow-hidden aspect-video glightbox" href=<?= get_attachment($image); ?>">
-                        <img class="absolute inset-0 object-cover w-full h-full transition-transform hover:scale-125" src=<?= get_attachment($image); ?>" />
+                        <img loading="lazy" class="absolute inset-0 object-cover w-full h-full transition-transform hover:scale-125" src=<?= get_attachment($image); ?>" />
                     </a>
                     <?php if($caption = wp_get_attachment_caption($image)): ?>
                         <p class="mt-2 text-base text-white"><?= $caption ?></p>
